@@ -139,6 +139,11 @@ The local radio will reply `OK`. You are now in command mode. Command mode will 
 5. enter relevant configuration commands (see table below). 
    
    - NOTE: **DO** press `Enter` after entering an AT command
+   - EXAMPLE: you are programming the ground station with network ID 2006
+     - `ATID 2006↵`
+       - (radio responds `OK`)
+     - `ATDH 0↵`
+     - etc. 
 
 |                                      | AT command | ground station | FlatSAT | note                                                                                                                                                                                                                                  |
 | ------------------------------------ | ---------- | -------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -153,6 +158,12 @@ The local radio will reply `OK`. You are now in command mode. Command mode will 
 7. `ATCN` to immediately exit command mode (or wait 10 seconds). 
 
 Switch radios (can use the same explorer breakout board) and repeat steps 4 through 7. 
+
+
+
+Use a label maker to label the ground station radio with your group's name. 
+
+
 
 ## Setup the ground station
 
