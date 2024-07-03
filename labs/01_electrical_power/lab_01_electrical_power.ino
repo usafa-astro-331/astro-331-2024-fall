@@ -1,6 +1,12 @@
 #include <Adafruit_INA219.h>
 Adafruit_INA219 ina219;
 
+// QWIIC cable colors
+// black = ground
+// red   = 3.3 V
+// blue  = SDA
+// yellow= SCL
+
 #include <SPI.h>
 #include <SD.h>
 
@@ -15,14 +21,15 @@ void setup() {
   delay(1000);
     
   Serial.begin(9600);
-  // while(!Serial);
-  Serial.println("test");
+  Serial1.begin(9600); 
 
   // Initialize the INA219.
   // By default the initialization will use the largest range (32V, 2A).  However
   // you can call a setCalibration function to change this range (see comments).
   if (! ina219.begin()) {
     Serial.println("Failed to find INA219");
+	Serial1.println("Failed to find INA219");
+	
     while (1) { delay(10); }
   }
   // To use a slightly lower 32V, 1A range (higher precision on amps):
@@ -30,26 +37,36 @@ void setup() {
   // Or to use a lower 16V, 400mA range (higher precision on volts and amps):
   //ina219.setCalibration_16V_400mA();
 
-  Serial.println("time (ms), current (mA), voltage (V)");
-
+  
     Serial.print("Initializing SD card...");
+	Serial1.print("Initializing SD card...");
   // see if the card is present and can be initialized:
   if (!SD.begin(chipSelect)) {
     Serial.println("Card failed, or not present");
+	Serial1.println("Card failed, or not present");
   
     // don't do anything more:
     while (1);
   }
   Serial.println("card initialized.");
+  Serial1.println("card initialized.");
      
-                File dataFile = SD.open("iv_curve.csv", FILE_WRITE);
+                File dataFile = SD.open("iv_curve.tsv", FILE_WRITE);
               // if the file is available, write to it:
               if (dataFile) {
                 dataFile.println("time (ms), current (mA), voltage (V)");
                 dataFile.close();
               }
-              // if the file isn't open, pop up an error:
-              else { Serial.println("error opening log file");  }
+              else { 
+              // if the file can't be opened, print an error:
+					Serial.println("error opening log file");
+					Serial1.println("error opening log file");
+			  }
+
+Serial.println("time (ms), current (mA), voltage (V)");
+Serial1.println("time (ms), current (mA), voltage (V)");
+
+
 
 } // end function setup()
 
@@ -100,12 +117,14 @@ if (averaging_index >= num_samples){
     
     current = current / float(num_samples); 
     voltage = voltage / float(num_samples);
-    write_line += ", current:";
-    write_line += current; 
-    write_line += ", voltage:";
-    write_line += voltage;
+    write_line += "\t"; 
+		write_line += ", current:";
+		write_line += current; 
+    write_line += "\t"; 
+		write_line += ", voltage:";
+		write_line += voltage;
     
-    File dataFile = SD.open("iv_curve.csv", FILE_WRITE);
+    File dataFile = SD.open("iv_curve.tsv", FILE_WRITE);
               // if the file is available, write to it:
               if (dataFile) {
                 dataFile.println(write_line);
@@ -113,12 +132,14 @@ if (averaging_index >= num_samples){
                 // print to the serial port too:
                 
               }
-              // if the file isn't open, pop up an error:
               else {
-                Serial.println("error opening datalog.txt");
+				// if the file can't be opened, print an error:
+					Serial.println("error opening log file");
+					Serial1.println("error opening log file");
               } // end if dataFile
 
-Serial.println(write_line);
+	Serial.println(write_line);
+	Serial1.println(write_line);
 
     due += interval; 
     
