@@ -103,7 +103,7 @@ FlatSAT saves current and voltage to `iv_curve.tsv` every 200 ms. On each poweru
 
 ## collect solar array performance data outside
 
-**Disconnect power to the Arduino so you're not saving excess data. **
+**Disconnect power to the Arduino so you're not saving excess data.**
 
 Take FlatSAT and the luxmeter outside and find a test site in direct sunlight. 
 
@@ -113,7 +113,7 @@ Point FlatSAT at the sun and power it on. *Very* slowly (slower than you’re th
 
 Remove the potentiometer to record a measurement of $V_{oc}$. Short the potentiometer pins with a wire to record a measurement of $I_{sc}$. 
 
-**Disconnect power to the Arduino, **rewire the solar array in parallel, and repeat these steps to collect the parallel I-V data. 
+**Disconnect power to the Arduino,** *rewire the solar array in parallel, and repeat these steps to collect the parallel I-V data. 
 
 ## cleanup
 
