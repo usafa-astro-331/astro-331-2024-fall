@@ -2,11 +2,7 @@
 
 In this lab you will test FlatSAT's Arducam payload to determine if FlatSAT's imaging system will meet its resolution requirement from a 500 km orbit. You will record images of a resolution chart to determine the best resolution FlatSAT can achieve at distances ranging from 0.5 m to 5 m. You will extrapolate this to a 500 km distance and compare performance to your prelab predictions.
 
-
-
 Prelab report instructions are available on overleaf: [https://www.overleaf.com/read/kfwyrpfyjkmy#965d6f](https://www.overleaf.com/read/kfwyrpfyjkmy#965d6f) 
-
-
 
 ## equipment
 
@@ -18,27 +14,23 @@ Prelab report instructions are available on overleaf: [https://www.overleaf.com/
 ## hardware
 
 * FlatSAT
-
+  
   * components from lab 1
   * ArduCAM-M-2MP
 
 ## software
 
 - already installed
+  
   - Arduino IDE
   - Arduino SAMD drivers (already installed)
 
 - install these Arduino libraries 
+  
   - ArduCAM
 
-
-
-
 - `lab_02_remote_sensing.ino`
-
 * `ArduCAM_Host_V2.0_Windows/ArduCAM_Host_V2.exe`
-
-
 
 ## setup
 
@@ -55,8 +47,6 @@ Connect components
 ArduCAM-M-2MP communicates with Arduino using both I2C and SPI. The Arduino sketch handles these protocols with the `Wire` and `SPI` libraries. I2C: sensor configuration. SPI: camera commands and data stream (images). 
 
 Note the orientation of the connections in the diagram: the camera board should be vertical with the sensor looking away from the LCD (towards the bottom of the diagram image. 
-
-
 
 ## Capture images
 
@@ -87,6 +77,7 @@ Set the following options:
 - Port -> COMX (same port your Arduino is connected to)
   - click "Open" (purple button)
   - This opens serial communication between Arduino and ArduCAM Host. You should get a message that confirms COM is open.
+  - **Note: Only one program at a time can use Arduino's serial port: Arduino IDE's serial monitor OR ArduCam. If this step fails, ensure that you have closed the serial monitor in Arduino IDE.**
 - Pix -> 1200 x 1600 (the sensor's max/native resolution)
 - SaveImage -> select (check)
 - File -> (select your group's folder)
@@ -112,7 +103,7 @@ Take and save a photo of your team using ArduCAM.
 
 - Note this scale for later use after the lab. 
 
-- Repeat these steps for the large resolution chart. 
+- Repeat these steps for the large resolution chart where necessary (only necessary when the distance gets so great that you cannot identify individual lines on the standard resolution chart).
 
 <img src="sources\ISO_12233-reschart big.svg" alt="ISO_12233-reschart" style="zoom: 33%;" />
 
