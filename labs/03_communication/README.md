@@ -10,7 +10,7 @@ prelab report instructions: [https://www.overleaf.com/read/qksywqwkjcqb#3d1ec1](
 
 ## equipment
 
-- 2 laptops (one only provides power to FlatSAT)
+- 2 laptops (one simply provides power to FlatSAT via USB)
 - micro USB cable
 - ruler and measuring tape
 
@@ -44,7 +44,7 @@ prelab report instructions: [https://www.overleaf.com/read/qksywqwkjcqb#3d1ec1](
     - [https://github.com/TeraTermProject/teraterm/releases](https://github.com/TeraTermProject/teraterm/releases)
     - `winget install teratermproject.teraterm`
 
-- `lab_03_communication.ino`
+- `03_communication.ino`
 
 ## lab report
 
