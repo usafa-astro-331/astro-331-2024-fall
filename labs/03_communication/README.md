@@ -159,11 +159,7 @@ The local radio will reply `OK`. You are now in command mode. Command mode will 
 
 Switch radios (can use the same explorer breakout board) and repeat steps 4 through 7. 
 
-
-
 Use a label maker to label the ground station radio with your group's name. 
-
-
 
 ## Setup the ground station
 
