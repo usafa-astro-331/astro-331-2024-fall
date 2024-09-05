@@ -48,7 +48,7 @@ Copy the setup below, but **do not place the 3rd (middle) cell into the battery 
 
 **NOTE: Do not connect the battery’s 12 V output to FlatSAT at any time during this lab. The only thing connected directly to the battery's 12V output is the input to the BEC.**
 
-![attitude_bb](../../fritzing_diagrams/04_attitude_bb.svg)
+![attitude_bb](../sources/331_bb.svg)
 
 - Add the red 9 DOF IMU (red square) to your FlatSAT as in the diagram.
   - use a QWIIC cable

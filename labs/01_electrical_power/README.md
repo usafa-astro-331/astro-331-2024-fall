@@ -54,7 +54,7 @@ Add required components to FlatSAT.
 
 - potentiometer (blue dial)
 
-![wiring diagram](../sources/fritzing/331X.svg)
+![wiring diagram](../sources/331_bb.svg)
 
 Record which solar panel you are using.
 

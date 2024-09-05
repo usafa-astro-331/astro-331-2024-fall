@@ -50,7 +50,7 @@ For today’s lab, FlatSAT will be powered by a 12 V lithium ion battery. The mo
 
 Copy the setup below, but **do not place the 3rd (middle) cell into the battery holder yet**. 
 
-![attitude_bb](../../fritzing_diagrams/04_attitude_bb.svg)
+![attitude_bb](../sources/331_bb.svg)
 
 - add the motor driver (green square) 
   - connect to Arduino and motor

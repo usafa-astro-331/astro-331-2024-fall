@@ -91,7 +91,7 @@ Each XBee radio maintains a record of the signal strength of the last message it
   - LEDs are directional—short leg of LED connects to ground through resistor
   - LEDs will burn out without a resistor
 
-<img src="../../fritzing_diagrams/03_communication_bb.svg" alt="breadboard"  />
+<img src="../sources/331_bb.svg" alt="breadboard"  />
 
 ### XBee breakout
 
