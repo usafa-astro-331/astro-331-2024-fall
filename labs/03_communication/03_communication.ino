@@ -12,6 +12,7 @@ void setup() {
 
 
 	pinMode(LED_pin, OUTPUT); 
+  pinMode(LED_BUILTIN, OUTPUT);
 	digitalWrite(LED_pin, LOW); 
 
 

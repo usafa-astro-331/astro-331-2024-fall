@@ -33,9 +33,21 @@ void get_command_from_pc() {
         break;
 
         case 3: 
-
+        // toggle LED
+        // user-installed LED
         digitalWrite(LED_pin, !(digitalRead(LED_pin)));
+        // built-in LED
+        // #ifdef ARDUINO_TEENSY41 
+          // digitalWrite(LED_BUILTIN, !(digitalRead(LED_BUILTIN)));
+        // #else // Arduino MKR Zero
+          digitalWrite(LED_BUILTIN, digitalRead(LED_pin));
+        // #endif
         
+        
+
+        
+
+
         if (digitalRead(LED_pin)){Serial1.println(" LED on");}
         else {Serial1.println(" LED off");}
 
